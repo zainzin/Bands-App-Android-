@@ -89,6 +89,8 @@ public class MainActivity extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;
+		} else if (id == R.id.exit_app){
+			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
