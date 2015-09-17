@@ -32,20 +32,25 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Toast t = Toast.makeText(getApplicationContext(), "You clicked on " + arr[position], Toast.LENGTH_LONG);
+				Toast t = Toast.makeText(getApplicationContext(), "Listening to a sample for " + arr[position], Toast.LENGTH_SHORT);
 				t.setGravity(Gravity.TOP | Gravity.END, 0, 0);
 				t.show();
 				ImageView imageBand = (ImageView) findViewById(R.id.image_view);
 				switch (position) {
 				case 0:
 					imageBand.setBackgroundResource(R.drawable.a);
+					playSample = MediaPlayer.create(MainActivity.this, R.raw.metallica);
+					playSample.start();
 					break;
 				case 1:
 					imageBand.setBackgroundResource(R.drawable.b);
+					playSample = MediaPlayer.create(MainActivity.this, R.raw.megadeth);
+					playSample.start();
 					break;
 				case 2:
 					imageBand.setBackgroundResource(R.drawable.c);
-					break;
+					playSample = MediaPlayer.create(MainActivity.this, R.raw.trivium);
+					playSample.start();
 				case 3:
 					imageBand.setBackgroundResource(R.drawable.d);
 					break;
